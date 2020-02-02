@@ -1,12 +1,14 @@
 <li class="row">
-	<div class="col-3 font-weight-bold">
-	{{name}}
+	<div class="col-3">
+	 <h4 class="font-weight-bold">{{name}}</h3>
 	</div>
 	<div class="col-9">
 	<button class="change-eaten btn btn-primary btn-sm" data-id="{{id}}" data-neweaten="{{eaten}}">
 		{{#if eaten}}EAT 'EM UP!{{else}}BARF 'EM BACK UP!{{/if}}
 	</button>
 
-	<button class="delete-veggie btn-secondary btn-sm" data-id="{{this.id}}">POOP 'EM OUT!</button>
+	{{!-- <button class="delete-veggie btn-secondary btn-sm" data-id="{{this.id}}">POOP 'EM OUT!</button> --}}
+	{{#unless eaten}}<button class="delete-veggie btn-secondary btn-sm" data-id="{{id}}">POOP 'EM OUT!</button>{{/unless}}
+
 	</div>
 </li>

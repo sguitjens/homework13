@@ -27,7 +27,7 @@ $(function() {
 
     var newVeggie = {
       name: $("#veg").val().trim(),
-      eaten: $("[name=eaten]:checked").val().trim()
+      // eaten: $("[name=eaten]:checked").val().trim()
     };
 
     // Send the POST request.
