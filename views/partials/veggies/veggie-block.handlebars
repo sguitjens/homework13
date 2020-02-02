@@ -1,14 +1,36 @@
-<li class="row">
-	<div class="col-3">
+<div class="card bg-transparent border-success">
+<div class="card-header">
 	 <h4 class="font-weight-bold">{{name}}</h3>
-	</div>
-	<div class="col-9">
-	<button class="change-eaten btn btn-primary btn-sm" data-id="{{id}}" data-neweaten="{{eaten}}">
+
+	{{!-- <button class="change-eaten btn btn-primary btn-sm" data-id="{{id}}" data-neweaten="{{eaten}}">
+		{{#if eaten}}EAT 'EM UP!{{else}}BARF 'EM BACK UP!{{/if}}
+	</button> --}}
+
+	<button  class="change-eaten btn-sm btn-primary" data-id="{{id}}" data-neweaten="{{eaten}}">
 		{{#if eaten}}EAT 'EM UP!{{else}}BARF 'EM BACK UP!{{/if}}
 	</button>
+		{{#unless eaten}}<button  class="delete-veggie btn-sm btn-secondary" data-id="{{id}}">POOP 'EM OUT!</button>{{/unless}}
+
 
 	{{!-- <button class="delete-veggie btn-secondary btn-sm" data-id="{{this.id}}">POOP 'EM OUT!</button> --}}
-	{{#unless eaten}}<button class="delete-veggie btn-secondary btn-sm" data-id="{{id}}">POOP 'EM OUT!</button>{{/unless}}
+	{{!-- {{#unless eaten}}<button class="delete-veggie btn-secondary btn-sm" data-id="{{id}}">POOP 'EM OUT!</button>{{/unless}} --}}
 
-	</div>
-</li>
+</div>
+</div>
+
+{{!-- <div class="card" style="width: 18rem;">
+  <div class="card-header">
+    Featured
+  </div>
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item">Cras justo odio</li>
+    <li class="list-group-item">Dapibus ac facilisis in</li>
+    <li class="list-group-item">Vestibulum at eros</li>
+  </ul>
+</div> --}}
+
+{{!-- <div class="btn-group" role="group" aria-label="Basic example">
+  <button type="button" class="btn btn-secondary">Left</button>
+  <button type="button" class="btn btn-secondary">Middle</button>
+  <button type="button" class="btn btn-secondary">Right</button>
+</div> --}}

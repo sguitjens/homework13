@@ -18,12 +18,16 @@
   margin-bottom: 5px;
 } */
 
+.text-responsive {
+  font-size: calc(100% + 1vw + 1vh);
+}
+
 
 body::after {
   content: "";
   background: url("../images/vegetables.jpg");
-  background-repeat: repeat-y;
   background-size: cover;
+  background-repeat: repeat-y;
   opacity: 0.3;
   top: 0;
   left: 0;
