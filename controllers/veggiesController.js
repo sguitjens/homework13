@@ -6,7 +6,7 @@ const router = express.Router();
 const veggie = require("../models/veggie.js");
 
 // Create all our routes and set up logic within those routes where required.
-router.get("/", function(req, res) {
+router.get("/", (req, res) => {
   veggie.all(data => {
     var hbsObject = {
       veggies: data
@@ -16,25 +16,25 @@ router.get("/", function(req, res) {
   });
 });
 
-router.post("/api/veggies", function(req, res) {
+router.post("/api/veggies", (req, res) => {
   veggie.create([
     "name", "eaten"
   ], [
     req.body.name, req.body.eaten
-  ], function(result) {
+  ], (result) => {
     // Send back the ID of the new quote
     res.json({ id: result.insertId });
   });
 });
 
-router.put("/api/veggies/:id", function(req, res) {
+router.put("/api/veggies/:id", (req, res) => {
   var condition = "id = " + req.params.id;
 
   console.log("condition", condition);
 
   veggie.update({
     eaten: req.body.eaten
-  }, condition, function(result) {
+  }, condition, (result) => {
     if (result.changedRows == 0) {
       // If no rows were changed, then the ID must not exist, so 404
       return res.status(404).end();
@@ -44,10 +44,10 @@ router.put("/api/veggies/:id", function(req, res) {
   });
 });
 
-router.delete("/api/veggies/:id", function(req, res) {
+router.delete("/api/veggies/:id", (req, res) => {
   var condition = "id = " + req.params.id;
 
-  veggie.delete(condition, function(result) {
+  veggie.delete(condition, result => {
     if (result.affectedRows == 0) {
       // If no rows were changed, then the ID must not exist, so 404
       return res.status(404).end();

@@ -2,24 +2,24 @@
 const orm = require("../config/orm.js");
 
 const veggie = {
-  all: function(cb) {
+  all: cb => {
     orm.all("veggies", res => {
       cb(res);
     });
   },
   // The variables cols and vals are arrays.
   create: (cols, vals, cb) => {
-    orm.create("veggies", cols, vals, function(res) {
+    orm.create("veggies", cols, vals, res => {
       cb(res);
     });
   },
   update: (objColVals, condition, cb) => {
-    orm.update("veggies", objColVals, condition, function(res) {
+    orm.update("veggies", objColVals, condition, res => {
       cb(res);
     });
   },
   delete: (condition, cb) => {
-    orm.delete("veggies", condition, function(res) {
+    orm.delete("veggies", condition, res => {
       cb(res);
     });
   }

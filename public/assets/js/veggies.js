@@ -25,8 +25,13 @@ $(function() {
     // Make sure to preventDefault on a submit event.
     event.preventDefault();
 
+    let vegName = $("#veg").val().trim();
+    if(!vegName) {
+      return;
+    }
     var newVeggie = {
-      name: $("#veg").val().trim(),
+      name: vegName,
+      // name: $("#veg").val().trim(),
       // eaten: $("[name=eaten]:checked").val().trim()
     };
 

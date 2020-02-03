@@ -1,9 +1,9 @@
-var express = require("express");
+const express = require("express");
 const favicon = require('serve-favicon'); // not sure about this
 
-var PORT = process.env.PORT || 8080;
+const PORT = process.env.PORT || 8080;
 
-var app = express();
+const app = express();
 
 app.use(favicon(__dirname + '/public/assets/images/favicon.png')); // not sure about this
 
@@ -15,13 +15,13 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 // Set Handlebars.
-var exphbs = require("express-handlebars");
+const exphbs = require("express-handlebars");
 
 app.engine("handlebars", exphbs({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
 
 // Import routes and give the server access to them.
-var routes = require("./controllers/veggiesController.js");
+const routes = require("./controllers/veggiesController.js");
 
 app.use(routes);
 
