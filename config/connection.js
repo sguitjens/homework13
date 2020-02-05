@@ -2,12 +2,20 @@
 const mysql = require("mysql");
 require("dotenv").config();
 
-const connection = mysql.createConnection({
+let connection;
+
+//dbURL: us-cdbr-iron-east-04.cleardb.net
+if (process.env.CLEARDB_GRAY_URL) {
+  connection = mysql.createConnection(process.env.CLEARDB_GRAY_URL);
+} else {
+  connection = mysql.createConnection({
   host: "localhost",
   user: "root",
   password: process.env.MYSQL_PASSWORD,
   database: "veggie_db"
 });
+}
+
 
 // Make connection.
 connection.connect(err => {
