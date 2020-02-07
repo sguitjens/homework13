@@ -2,6 +2,9 @@
   "name": "homework13",
   "version": "1.0.0",
   "description": "Eat Your Veggies",
+  "engines": {
+    "node": "^10.10.0"
+  },
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
