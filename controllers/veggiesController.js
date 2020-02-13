@@ -16,6 +16,10 @@ router.get("/", (req, res) => {
   });
 });
 
+router.get.catch = err => {
+  console.log("ERROR on get", err);
+}
+
 router.post("/api/veggies", (req, res) => {
   veggie.create([
     "name", "eaten"
@@ -26,6 +30,10 @@ router.post("/api/veggies", (req, res) => {
     res.json({ id: result.insertId });
   });
 });
+
+router.post.catch = err => {
+  console.log(("ERROR on post", err));
+}
 
 router.put("/api/veggies/:id", (req, res) => {
   var condition = "id = " + req.params.id;
@@ -44,6 +52,10 @@ router.put("/api/veggies/:id", (req, res) => {
   });
 });
 
+router.put.catch = err => {
+  console.log(("ERROR on put", err));
+}
+
 router.delete("/api/veggies/:id", (req, res) => {
   var condition = "id = " + req.params.id;
 
@@ -56,6 +68,10 @@ router.delete("/api/veggies/:id", (req, res) => {
     }
   });
 });
+
+router.delete.catch = err => {
+  console.log(("ERROR on delete", err));
+}
 
 // Export routes for server.js to use.
 module.exports = router;
