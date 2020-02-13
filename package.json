@@ -18,7 +18,8 @@
     "express-handlebars": "^3.0.0",
     "mysql": "^2.16.0",
     "save": "^2.4.0",
-    "serve-favicon": "^2.5.0"
+    "serve-favicon": "^2.5.0",
+    "js-yaml": ">=3.13.1"
   },
   "devDependencies": {
     "handlebars-helper-css": "^0.1.0"

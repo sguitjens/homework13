@@ -13,9 +13,8 @@ if (process.env.CLEARDB_GRAY_URL) {
   user: "root",
   password: process.env.MYSQL_PASSWORD,
   database: "veggie_db"
-});
+  });
 }
-
 
 // Make connection.
 connection.connect(err => {
@@ -25,6 +24,10 @@ connection.connect(err => {
   }
   console.log("connected as id " + connection.threadId);
 });
+
+connection.catch = err => {
+  console.log("CONNECTION ERROR", err);
+}
 
 // Export connection for our ORM to use.
 module.exports = connection;
